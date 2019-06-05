@@ -57,6 +57,22 @@ class DevicesController < ApplicationController
     end
   end
 
+  def destroy_row_from_company
+    @device = Device.find(params.fetch("id_to_remove"))
+
+    @device.destroy
+
+    redirect_to("/companies/#{@device.company_id}", notice: "Device deleted successfully.")
+  end
+
+  def destroy_row_from_category
+    @device = Device.find(params.fetch("id_to_remove"))
+
+    @device.destroy
+
+    redirect_to("/categories/#{@device.category_id}", notice: "Device deleted successfully.")
+  end
+
   def destroy_row
     @device = Device.find(params.fetch("id_to_remove"))
 
