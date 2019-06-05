@@ -1,0 +1,80 @@
+<!-- Validation failure messages -->
+<% if @device.present? %>
+  <% if @device.errors.any? %>
+    <% @device.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new device
+</h1>
+
+
+<hr>
+
+<!-- Form device start -->
+<form action="/create_device" method="post">
+<!-- Form device end -->
+
+  <!-- Label and input for description start -->
+  <div class="form-group">
+    <label for="description">
+      Description
+    </label>
+
+    <!-- Input for description start -->
+    <input type="text" id="description" name="description" class="form-control" value="<%= @device.description %>">
+    <!-- Input for description end -->
+  </div>
+  <!-- Label and input for description end -->
+
+  <!-- Label and input for photo start -->
+  <div class="form-group">
+    <label for="photo">
+      Photo
+    </label>
+
+    <!-- Input for photo start -->
+    <input type="text" id="photo" name="photo" class="form-control" value="<%= @device.photo %>">
+    <!-- Input for photo end -->
+  </div>
+  <!-- Label and input for photo end -->
+
+  <!-- Label and input for company_id start -->
+  <div class="form-group">
+    <label for="company_id">
+      Company
+    </label>
+
+    <!-- Input for company_id start -->
+    <input type="text" id="company_id" name="company_id" class="form-control" value="<%= @device.company_id %>">
+    <!-- Input for company_id end -->
+  </div>
+  <!-- Label and input for company_id end -->
+
+  <!-- Label and input for category_id start -->
+  <div class="form-group">
+    <label for="category_id">
+      Category
+    </label>
+
+    <!-- Input for category_id start -->
+    <input type="text" id="category_id" name="category_id" class="form-control" value="<%= @device.category_id %>">
+    <!-- Input for category_id end -->
+  </div>
+  <!-- Label and input for category_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create device
+  </button>
+</form>
+
+<hr>
+
+<a href="/devices">
+  Go back
+</a>

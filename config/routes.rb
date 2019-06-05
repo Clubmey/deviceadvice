@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Device resource:
+
+  # CREATE
+  get("/devices/new", { :controller => "devices", :action => "new_form" })
+  post("/create_device", { :controller => "devices", :action => "create_row" })
+
+  # READ
+  get("/devices", { :controller => "devices", :action => "index" })
+  get("/devices/:id_to_display", { :controller => "devices", :action => "show" })
+
+  # UPDATE
+  get("/devices/:prefill_with_id/edit", { :controller => "devices", :action => "edit_form" })
+  post("/update_device/:id_to_modify", { :controller => "devices", :action => "update_row" })
+
+  # DELETE
+  get("/delete_device/:id_to_remove", { :controller => "devices", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Review resource:
 
   # CREATE
