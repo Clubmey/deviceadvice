@@ -48,7 +48,7 @@
     </label>
 
     <!-- Input for device_id start -->
-    <input type="text" id="device_id" name="device_id" class="form-control" value="<%= @review.device_id %>">
+    <%= select_tag(:device_id, options_from_collection_for_select(Device.all, :id, :description, @review.device_id), :class => "form-control") %>
     <!-- Input for device_id end -->
   </div>
   <!-- Label and input for device_id end -->
