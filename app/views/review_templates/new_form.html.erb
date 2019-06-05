@@ -1,0 +1,69 @@
+<h1>
+  Add a new review
+</h1>
+
+
+<hr>
+
+<!-- Form review start -->
+<form action="/create_review" method="post">
+<!-- Form review end -->
+
+  <!-- Label and input for rating start -->
+  <div class="form-group">
+    <label for="rating">
+      Rating
+    </label>
+
+    <!-- Input for rating start -->
+    <input type="text" id="rating" name="rating" class="form-control">
+    <!-- Input for rating end -->
+  </div>
+  <!-- Label and input for rating end -->
+
+  <!-- Label and input for comments start -->
+  <div class="form-group">
+    <label for="comments">
+      Comments
+    </label>
+
+    <!-- Input for comments start -->
+    <input type="text" id="comments" name="comments" class="form-control">
+    <!-- Input for comments end -->
+  </div>
+  <!-- Label and input for comments end -->
+
+  <!-- Label and input for device_id start -->
+  <div class="form-group">
+    <label for="device_id">
+      Device
+    </label>
+
+    <!-- Input for device_id start -->
+    <input type="text" id="device_id" name="device_id" class="form-control">
+    <!-- Input for device_id end -->
+  </div>
+  <!-- Label and input for device_id end -->
+
+  <!-- Label and input for commenter_id start -->
+  <div class="form-group">
+    <label for="commenter_id">
+      Commenter
+    </label>
+
+    <!-- Input for commenter_id start -->
+    <input type="text" id="commenter_id" name="commenter_id" class="form-control">
+    <!-- Input for commenter_id end -->
+  </div>
+  <!-- Label and input for commenter_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create review
+  </button>
+</form>
+
+<hr>
+
+<a href="/reviews">
+  Go back
+</a>
