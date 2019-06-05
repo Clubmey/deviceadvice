@@ -17,9 +17,11 @@
         <!-- Show link end -->
 
         <!-- Delete link start -->
-        <a href="/delete_review_from_device/<%= review.id %>">
-          Delete
-        </a>
+        <%if current_user == review.commenter %>
+          <a href="/delete_review_from_device/<%= review.id %>">
+            Delete
+          </a>
+        <% end %>
         <!-- Delete link end -->
 
       </li>
