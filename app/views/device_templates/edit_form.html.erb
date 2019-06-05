@@ -52,7 +52,7 @@
     </label>
 
     <!-- Input for category_id start -->
-    <input type="text" id="category_id" name="category_id" class="form-control" value="<%= @device.category_id %>">
+    <%= select_tag(:category_id, options_from_collection_for_select(Category.all, :id, :description, @device.category_id), :class => "form-control") %>
     <!-- Input for category_id end -->
   </div>
   <!-- Label and input for category_id end -->
