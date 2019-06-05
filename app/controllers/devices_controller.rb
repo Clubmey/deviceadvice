@@ -1,6 +1,7 @@
 class DevicesController < ApplicationController
   def index
-    @devices = Device.page(params[:page]).per(10)
+    @q = Device.ransack(params[:q])
+    @devices = @q.result(:distinct => true).includes(:reviews, :company, :category).page(params[:page]).per(10)
 
     render("device_templates/index.html.erb")
   end
