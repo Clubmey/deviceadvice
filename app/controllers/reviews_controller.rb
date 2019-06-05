@@ -63,7 +63,7 @@ class ReviewsController < ApplicationController
     @review.rating = params.fetch("rating")
     @review.comments = params.fetch("comments")
     @review.device_id = params.fetch("device_id")
-    @review.commenter_id = params.fetch("commenter_id")
+    
 
     if @review.valid?
       @review.save
