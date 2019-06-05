@@ -78,13 +78,21 @@
 
         <!-- Display device.company_id start -->
         <td>
-          <%= device.company.description %>
+          <% if device.company.present? %>
+            <a href="/companies/<%= device.company.id %>">
+              <%= device.company.description %>
+            </a>
+          <% end %>
         </td>
         <!-- Display device.company_id end -->
 
         <!-- Display device.category_id start -->
         <td>
-          <%= device.category.description %>
+          <% if device.category.present? %>
+            <a href="/categories/<%= device.category.id %>">
+              <%= device.category.description %>
+            </a>
+          <% end %>
         </td>
         <!-- Display device.category_id end -->
 

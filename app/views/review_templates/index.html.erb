@@ -78,13 +78,21 @@
 
         <!-- Display review.device_id start -->
         <td>
-          <%= review.device.description %>
+          <% if review.device.present? %>
+            <a href="/devices/<%= review.device.id %>">
+              <%= review.device.description %>
+            </a>
+          <% end %>
         </td>
         <!-- Display review.device_id end -->
 
         <!-- Display review.commenter_id start -->
         <td>
-          <%= review.commenter.email %>
+          <% if review.commenter.present? %>
+            <a href="/users/<%= review.commenter.id %>">
+              <%= review.commenter.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display review.commenter_id end -->
 

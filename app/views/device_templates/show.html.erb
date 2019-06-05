@@ -52,7 +52,11 @@
       </dt>
       <!-- Display company_id start -->
       <dd>
-        <%= @device.company_id %>
+        <% if @device.company.present? %>
+          <a href="/companies/<%= @device.company_id %>">
+            <%= @device.company.description %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display company_id end -->
 
@@ -61,7 +65,11 @@
       </dt>
       <!-- Display category_id start -->
       <dd>
-        <%= @device.category_id %>
+        <% if @device.category.present? %>
+          <a href="/categories/<%= @device.category_id %>">
+            <%= @device.category.description %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display category_id end -->
 

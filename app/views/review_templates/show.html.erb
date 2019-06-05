@@ -56,7 +56,11 @@
       </dt>
       <!-- Display device_id start -->
       <dd>
-        <%= @review.device_id %>
+        <% if @review.device.present? %>
+          <a href="/devices/<%= @review.device_id %>">
+            <%= @review.device.description %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display device_id end -->
 
@@ -65,7 +69,11 @@
       </dt>
       <!-- Display commenter_id start -->
       <dd>
-        <%= @review.commenter_id %>
+        <% if @review.commenter.present? %>
+          <a href="/users/<%= @review.commenter_id %>">
+            <%= @review.commenter.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display commenter_id end -->
 
