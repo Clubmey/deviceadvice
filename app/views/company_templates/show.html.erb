@@ -11,58 +11,46 @@
         </a>
       </div>
 
-      <!-- Edit link company start -->
       <div class="col">
         <a href="/companies/<%= @company.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit company
         </a>
       </div>
-      <!-- Edit link company end -->
 
-      <!-- Delete link company start -->
       <div class="col">
         <a href="/delete_company/<%= @company.id %>" class="btn btn-block btn-outline-secondary">
           Delete company
         </a>
       </div>
-      <!-- Delete link company end -->
     </div>
 
     <dl>
       <dt>
         Description
       </dt>
-      <!-- Display description start -->
       <dd>
         <%= @company.description %>
       </dd>
-      <!-- Display description end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@company.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@company.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "company_templates/company_devices" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

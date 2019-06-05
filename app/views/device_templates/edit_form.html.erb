@@ -4,58 +4,40 @@
 
 <hr>
 
-<!-- Form device start -->
 <form action="/update_device/<%= @device.id %>" method="post" enctype="multipart/form-data">
-<!-- Form device end -->
 
-  <!-- Label and input for description start -->
   <div class="form-group">
     <label for="description">
       Description
     </label>
 
-    <!-- Input for description start -->
     <input type="text" id="description" name="description" class="form-control" value="<%= @device.description %>">
-    <!-- Input for description end -->
   </div>
-  <!-- Label and input for description end -->
 
-  <!-- Label and input for photo start -->
   <div class="form-group">
     <label for="photo">
       Photo
     </label>
 
-    <!-- Input for photo start -->
     <%= cl_image_tag(@device.photo.to_s, :width => 90, :height => 90, :crop => :thumb) %>
     <input type="file" id="photo" name="photo" class="form-control">
-    <!-- Input for photo end -->
   </div>
-  <!-- Label and input for photo end -->
 
-  <!-- Label and input for company_id start -->
   <div class="form-group">
     <label for="company_id">
       Company
     </label>
 
-    <!-- Input for company_id start -->
     <%= select_tag(:company_id, options_from_collection_for_select(Company.all, :id, :description, @device.company_id), :class => "form-control") %>
-    <!-- Input for company_id end -->
   </div>
-  <!-- Label and input for company_id end -->
 
-  <!-- Label and input for category_id start -->
   <div class="form-group">
     <label for="category_id">
       Category
     </label>
 
-    <!-- Input for category_id start -->
     <%= select_tag(:category_id, options_from_collection_for_select(Category.all, :id, :description, @device.category_id), :class => "form-control") %>
-    <!-- Input for category_id end -->
   </div>
-  <!-- Label and input for category_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update device

@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @review.errors.any? %>
   <% @review.errors.full_messages.each do |message| %>
     <div class="alert">
@@ -13,48 +12,32 @@
 
 <hr>
 
-<!-- Form review start -->
 <form action="/update_review/<%= @review.id %>" method="post">
-<!-- Form review end -->
 
-  <!-- Label and input for rating start -->
   <div class="form-group">
     <label for="rating">
       Rating
     </label>
 
-    <!-- Input for rating start -->
     <input type="text" id="rating" name="rating" class="form-control" value="<%= @review.rating %>">
-    <!-- Input for rating end -->
   </div>
-  <!-- Label and input for rating end -->
 
-  <!-- Label and input for comments start -->
   <div class="form-group">
     <label for="comments">
       Comments
     </label>
 
-    <!-- Input for comments start -->
     <input type="text" id="comments" name="comments" class="form-control" value="<%= @review.comments %>">
-    <!-- Input for comments end -->
   </div>
-  <!-- Label and input for comments end -->
 
-  <!-- Label and input for device_id start -->
   <div class="form-group">
     <label for="device_id">
       Device
     </label>
 
-    <!-- Input for device_id start -->
     <%= select_tag(:device_id, options_from_collection_for_select(Device.all, :id, :description, @review.device_id), :class => "form-control") %>
-    <!-- Input for device_id end -->
   </div>
-  <!-- Label and input for device_id end -->
 
-  <!-- Label and input for commenter_id start -->
-  <!-- Label and input for commenter_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update review

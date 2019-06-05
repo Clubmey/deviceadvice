@@ -11,7 +11,6 @@
         </a>
       </div>
 
-      <!-- Edit link review start -->
       <div class="col">
         <% if current_user == @review.commenter %>
           <a href="/reviews/<%= @review.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
@@ -19,9 +18,7 @@
           </a>
         <% end %>
       </div>
-      <!-- Edit link review end -->
 
-      <!-- Delete link review start -->
       <div class="col">
         <% if current_user == @review.commenter %>
           <a href="/delete_review/<%= @review.id %>" class="btn btn-block btn-sm btn-outline-secondary">
@@ -29,32 +26,26 @@
           </a>
         <% end %>
       </div>
-      <!-- Delete link review end -->
     </div>
 
     <dl>
       <dt>
         Rating
       </dt>
-      <!-- Display rating start -->
       <dd>
         <%= @review.rating %>
       </dd>
-      <!-- Display rating end -->
 
       <dt>
         Comments
       </dt>
-      <!-- Display comments start -->
       <dd>
         <%= @review.comments %>
       </dd>
-      <!-- Display comments end -->
 
       <dt>
         Device
       </dt>
-      <!-- Display device_id start -->
       <dd>
         <% if @review.device.present? %>
           <a href="/devices/<%= @review.device_id %>">
@@ -62,12 +53,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display device_id end -->
 
       <dt>
         Commenter
       </dt>
-      <!-- Display commenter_id start -->
       <dd>
         <% if @review.commenter.present? %>
           <a href="/users/<%= @review.commenter_id %>">
@@ -75,28 +64,21 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display commenter_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@review.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@review.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

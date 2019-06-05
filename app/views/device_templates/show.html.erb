@@ -11,46 +11,37 @@
         </a>
       </div>
 
-      <!-- Edit link device start -->
       <div class="col">
         <a href="/devices/<%= @device.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit device
         </a>
       </div>
-      <!-- Edit link device end -->
 
-      <!-- Delete link device start -->
       <div class="col">
         <a href="/delete_device/<%= @device.id %>" class="btn btn-block btn-outline-secondary">
           Delete device
         </a>
       </div>
-      <!-- Delete link device end -->
     </div>
 
     <dl>
       <dt>
         Description
       </dt>
-      <!-- Display description start -->
       <dd>
         <%= @device.description %>
       </dd>
-      <!-- Display description end -->
 
       <dt>
         Photo
       </dt>
-      <!-- Display photo start -->
       <dd>
         <img src="<%= @device.photo %>" class="img-fluid">
       </dd>
-      <!-- Display photo end -->
 
       <dt>
         Company
       </dt>
-      <!-- Display company_id start -->
       <dd>
         <% if @device.company.present? %>
           <a href="/companies/<%= @device.company_id %>">
@@ -58,12 +49,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display company_id end -->
 
       <dt>
         Category
       </dt>
-      <!-- Display category_id start -->
       <dd>
         <% if @device.category.present? %>
           <a href="/categories/<%= @device.category_id %>">
@@ -71,33 +60,26 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display category_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@device.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@device.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "device_templates/device_reviews" %>
   </div>
 </div>
-<!-- Show Page Customization end -->
