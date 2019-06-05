@@ -4,6 +4,8 @@ RSpec.describe Device, type: :model do
   
     describe "Direct Associations" do
 
+    it { should belong_to(:company) }
+
     it { should have_many(:reviews) }
 
     end
