@@ -1,0 +1,64 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Category #<%= @category.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/categories" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link category start -->
+      <div class="col">
+        <a href="/categories/<%= @category.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit category
+        </a>
+      </div>
+      <!-- Edit link category end -->
+
+      <!-- Delete link category start -->
+      <div class="col">
+        <a href="/delete_category/<%= @category.id %>" class="btn btn-block btn-outline-secondary">
+          Delete category
+        </a>
+      </div>
+      <!-- Delete link category end -->
+    </div>
+
+    <dl>
+      <dt>
+        Description
+      </dt>
+      <!-- Display description start -->
+      <dd>
+        <%= @category.description %>
+      </dd>
+      <!-- Display description end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@category.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@category.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->
