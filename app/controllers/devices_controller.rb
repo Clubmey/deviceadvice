@@ -1,6 +1,6 @@
 class DevicesController < ApplicationController
   def index
-    @devices = Device.all
+    @devices = Device.page(params[:page]).per(10)
 
     render("device_templates/index.html.erb")
   end
