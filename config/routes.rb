@@ -45,6 +45,8 @@ Rails.application.routes.draw do
   # CREATE
   get("/devices/new", { :controller => "devices", :action => "new_form" })
   post("/create_device", { :controller => "devices", :action => "create_row" })
+  post("/create_device_from_category", { :controller => "devices", :action => "create_row_from_category" })
+  post("/create_device_from_company", { :controller => "devices", :action => "create_row_from_company" })
 
   # READ
   get("/devices", { :controller => "devices", :action => "index" })
@@ -66,6 +68,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/reviews/new", { :controller => "reviews", :action => "new_form" })
   post("/create_review", { :controller => "reviews", :action => "create_row" })
+  post("/create_review_from_device", { :controller => "reviews", :action => "create_row_from_device" })
 
   # READ
   get("/reviews", { :controller => "reviews", :action => "index" })

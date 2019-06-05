@@ -34,6 +34,23 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def create_row_from_device
+    @review = Review.new
+
+    @review.rating = params.fetch("rating")
+    @review.comments = params.fetch("comments")
+    @review.device_id = params.fetch("device_id")
+    @review.commenter_id = params.fetch("commenter_id")
+
+    if @review.valid?
+      @review.save
+
+      redirect_to("/devices/#{@review.device_id}", notice: "Review created successfully.")
+    else
+      render("review_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @review = Review.find(params.fetch("prefill_with_id"))
 

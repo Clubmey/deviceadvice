@@ -1,0 +1,49 @@
+<!-- Form review start -->
+<form action="/create_review_from_device" method="post">
+<!-- Form review end -->
+
+  <!-- Label and input for rating start -->
+  <div class="form-group">
+    <label for="rating">
+      Rating
+    </label>
+
+    <!-- Input for rating start -->
+    <input type="text" id="rating" name="rating" class="form-control" value="<%= @review.rating %>">
+    <!-- Input for rating end -->
+  </div>
+  <!-- Label and input for rating end -->
+
+  <!-- Label and input for comments start -->
+  <div class="form-group">
+    <label for="comments">
+      Comments
+    </label>
+
+    <!-- Input for comments start -->
+    <input type="text" id="comments" name="comments" class="form-control" value="<%= @review.comments %>">
+    <!-- Input for comments end -->
+  </div>
+  <!-- Label and input for comments end -->
+
+  <!-- Label and input for device_id start -->
+  <!-- Input for device_id start -->
+  <input type="hidden" name="device_id" value="<%= @device.id %>">
+  <!-- Input for device_id end -->
+
+  <!-- Label and input for commenter_id start -->
+  <div class="form-group">
+    <label for="commenter_id">
+      Commenter
+    </label>
+
+    <!-- Input for commenter_id start -->
+    <input type="text" id="commenter_id" name="commenter_id" class="form-control" value="<%= @review.commenter_id %>">
+    <!-- Input for commenter_id end -->
+  </div>
+  <!-- Label and input for commenter_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create review
+  </button>
+</form>

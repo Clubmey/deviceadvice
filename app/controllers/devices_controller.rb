@@ -6,6 +6,7 @@ class DevicesController < ApplicationController
   end
 
   def show
+    @review = Review.new
     @device = Device.find(params.fetch("id_to_display"))
 
     render("device_templates/show.html.erb")
@@ -29,6 +30,40 @@ class DevicesController < ApplicationController
       @device.save
 
       redirect_back(:fallback_location => "/devices", :notice => "Device created successfully.")
+    else
+      render("device_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_company
+    @device = Device.new
+
+    @device.description = params.fetch("description")
+    @device.photo = params.fetch("photo")
+    @device.company_id = params.fetch("company_id")
+    @device.category_id = params.fetch("category_id")
+
+    if @device.valid?
+      @device.save
+
+      redirect_to("/companies/#{@device.company_id}", notice: "Device created successfully.")
+    else
+      render("device_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_category
+    @device = Device.new
+
+    @device.description = params.fetch("description")
+    @device.photo = params.fetch("photo")
+    @device.company_id = params.fetch("company_id")
+    @device.category_id = params.fetch("category_id")
+
+    if @device.valid?
+      @device.save
+
+      redirect_to("/categories/#{@device.category_id}", notice: "Device created successfully.")
     else
       render("device_templates/new_form_with_errors.html.erb")
     end
