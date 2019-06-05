@@ -5,7 +5,7 @@
 <hr>
 
 <!-- Form device start -->
-<form action="/update_device/<%= @device.id %>" method="post">
+<form action="/update_device/<%= @device.id %>" method="post" enctype="multipart/form-data">
 <!-- Form device end -->
 
   <!-- Label and input for description start -->
@@ -27,7 +27,8 @@
     </label>
 
     <!-- Input for photo start -->
-    <input type="text" id="photo" name="photo" class="form-control" value="<%= @device.photo %>">
+    <%= cl_image_tag(@device.photo.to_s, :width => 90, :height => 90, :crop => :thumb) %>
+    <input type="file" id="photo" name="photo" class="form-control">
     <!-- Input for photo end -->
   </div>
   <!-- Label and input for photo end -->

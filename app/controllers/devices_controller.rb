@@ -22,7 +22,7 @@ class DevicesController < ApplicationController
     @device = Device.new
 
     @device.description = params.fetch("description")
-    @device.photo = params.fetch("photo")
+    @device.photo = params.fetch("photo") if params.key?("photo")
     @device.company_id = params.fetch("company_id")
     @device.category_id = params.fetch("category_id")
 
@@ -39,7 +39,7 @@ class DevicesController < ApplicationController
     @device = Device.new
 
     @device.description = params.fetch("description")
-    @device.photo = params.fetch("photo")
+    @device.photo = params.fetch("photo") if params.key?("photo")
     @device.company_id = params.fetch("company_id")
     @device.category_id = params.fetch("category_id")
 
@@ -56,7 +56,7 @@ class DevicesController < ApplicationController
     @device = Device.new
 
     @device.description = params.fetch("description")
-    @device.photo = params.fetch("photo")
+    @device.photo = params.fetch("photo") if params.key?("photo")
     @device.company_id = params.fetch("company_id")
     @device.category_id = params.fetch("category_id")
 
@@ -79,7 +79,7 @@ class DevicesController < ApplicationController
     @device = Device.find(params.fetch("id_to_modify"))
 
     @device.description = params.fetch("description")
-    @device.photo = params.fetch("photo")
+    @device.photo = params.fetch("photo") if params.key?("photo")
     @device.company_id = params.fetch("company_id")
     @device.category_id = params.fetch("category_id")
 

@@ -17,7 +17,7 @@
 <hr>
 
 <!-- Form device start -->
-<form action="/create_device" method="post">
+<form action="/create_device" method="post" enctype="multipart/form-data">
 <!-- Form device end -->
 
   <!-- Label and input for description start -->
@@ -39,7 +39,7 @@
     </label>
 
     <!-- Input for photo start -->
-    <input type="text" id="photo" name="photo" class="form-control" value="<%= @device.photo %>">
+    <input type="file" id="photo" name="photo" class="form-control">
     <!-- Input for photo end -->
   </div>
   <!-- Label and input for photo end -->
